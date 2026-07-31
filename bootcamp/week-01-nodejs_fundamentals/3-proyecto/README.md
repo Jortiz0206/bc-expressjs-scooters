@@ -1,105 +1,63 @@
-# 🚀 Proyecto Semanal — Procesador de Datos con Node.js
+# 🚀 Procesador de Datos — Catálogo de Patinetas Eléctricas (CLI)
 
-## 🎯 Objetivo
-
-Construir una herramienta de línea de comandos (CLI) que lea datos desde un archivo JSON, los procese aplicando filtros y transformaciones, y genere un reporte con los resultados — todo usando **Node.js + TypeScript + async/await**.
-
----
-
-## 📋 Tu Dominio Asignado
-
-**El instructor te asignará un dominio específico.** Mientras tanto, el código `starter/` trabaja con un recurso genérico llamado `Item`.
-
-Cuando recibas tu dominio, renombra:
-- `Item` → el recurso principal de tu dominio (ej. `Book`, `Medicine`, `Member`)
-- `items.json` → el archivo de datos de tu dominio (ej. `books.json`)
-- Los campos de `Item` → atributos propios de tu recurso
-
-### 💡 Ejemplos de Adaptación por Dominio
-
-| Dominio | Recurso | Campos |
-|---------|---------|--------|
-| Biblioteca | `Book` | `title`, `author`, `genre`, `available` |
-| Farmacia | `Medicine` | `name`, `category`, `price`, `stock`, `requiresPrescription` |
-| Gimnasio | `Member` | `name`, `plan`, `active`, `monthlyFee` |
-| Restaurante | `Dish` | `name`, `category`, `price`, `available` |
-| Hotel | `Room` | `number`, `type`, `pricePerNight`, `available` |
+> *Desarrollado por:* Faloon Johanna Ortiz  
+> *Bootcamp:* Software Analysis and Development  
+> *Semana 1:* Fundamentos de Node.js y TypeScript
 
 ---
 
-## ✅ Requisitos Funcionales
+## 🎯 Objetivo del Proyecto
+Construir una herramienta de línea de comandos (CLI) robusta y modular utilizando *Node.js, TypeScript y programación asíncrona (async/await)*, capaz de leer datos desde un archivo JSON, aplicar filtros personalizados, procesar estadísticas analíticas y generar reportes automáticos en formato JSON.
 
-### 1. Leer datos desde un archivo JSON
+---
 
-La herramienta debe leer el archivo `data/items.json` usando `fs/promises`.
+## 📋 Dominio Asignado: Tienda de Patinetas Eléctricas
 
-### 2. Mostrar un resumen del catálogo
+* *Recurso Principal:* Scooter
+* *Dataset de Trabajo:* data/items.json (Catálogo con registros detallados)
+* *Atributos del Recurso (Scooter):*
+  * id: Identificador único de la patineta.
+  * name: Modelo o nombre comercial.
+  * category: Categoría operativa (ej. Urban, Off-Road, Kids).
+  * price: Valor comercial en dólares.
+  * active: Estado actual de disponibilidad (true / false).
+  * stock: Unidades disponibles en inventario.
 
-- Total de ítems
-- Ítems activos vs inactivos
-- Precio promedio
-- Ítem más caro y más barato
+---
 
-### 3. Filtrar por categoría
+## 🛠️ Arquitectura y Estructura del Código
 
-Aceptar un argumento de línea de comandos para filtrar por categoría:
+El proyecto está diseñado bajo una arquitectura modular y limpia, separando responsabilidades en cada archivo:
+* *src/types.ts*: Definición estricta de interfaces y tipos en TypeScript para los ítems y los reportes.
+* *src/reader.ts*: Módulo encargado de la lectura asíncrona segura del archivo JSON usando fs/promises.
+* *src/processor.ts*: Contiene la lógica de negocio para filtrar por categorías (insensible a mayúsculas/minúsculas) y calcular métricas estadísticas (totales, promedios, elementos más caros y económicos).
+* *src/writer.ts*: Gestiona la creación automática del directorio de salida y la persistencia del reporte procesado.
+* *src/index.ts: Archivo de entrada principal (*CLI Entry Point) que captura los argumentos de la consola y orquesta todo el flujo de ejecución.
+
+---
+
+## ✅ Requisitos Funcionales Implementados
+
+1. *Lectura de Datos Asíncrona:* Lectura limpia y eficiente de data/items.json.
+2. *Resumen Estadístico del Catálogo:* Cálculo preciso de:
+   * Total de elementos en inventario.
+   * Patinetas activas vs. inactivas.
+   * Precio promedio del catálogo.
+   * Identificación del modelo más costoso y el más económico.
+3. *Filtrado por Línea de Comandos:* Soporte para el parámetro --category para segmentar la información en tiempo de ejecución.
+4. *Generación de Reportes:* Creación automática del archivo consolidado en output/report.json.
+5. *Manejo Robusto de Errores:* Control de excepciones para archivos inexistentes, catálogos vacíos o categorías no encontradas (mostrando sugerencias y cerrando con códigos de salida seguros).
+
+---
+
+## 🧪 Instrucciones de Ejecución y Pruebas
+
+Abre tu terminal integrada en la ruta del proyecto y sigue estos pasos:
+
+### 1. Instalar dependencias requeridas
 ```bash
-pnpm start -- --category electronics
-```
+npx pnpm@10.34.5 install
 
-### 4. Generar reporte en un archivo de salida
-
-Guardar el reporte en `output/report.json` usando `fs/promises.writeFile`.
-
-### 5. Manejo de errores
-
-- Si el archivo `items.json` no existe → mostrar error descriptivo y terminar con `process.exit(1)`
-- Si la categoría no existe → mostrar aviso y listar las categorías disponibles
-
----
-
-## 🛠️ Entregables
-
-1. **Código funcional** que pase `pnpm build` sin errores TypeScript
-2. **README.md actualizado** con tu dominio y descripción del recurso
-3. **Screenshots o logs** de la herramienta ejecutándose con distintos argumentos
-4. **`data/items.json`** adaptado a tu dominio (mínimo 10 registros)
-5. **Reporte generado** en `output/report.json`
-
----
-
-## ⏱️ Tiempo estimado: 2-3 horas
-
----
-
-## 🧪 Cómo correr el proyecto
-
+## 1. Resumen general sin filtros
 ```bash
-cd 3-proyecto/starter
-pnpm install
-pnpm dev              # sin filtro — muestra todos
-pnpm dev -- --category electronics   # con filtro
-```
-
----
-
-## 📊 Criterios de Evaluación
-
-| Criterio | Peso |
-|----------|------|
-| Lee y parsea `items.json` correctamente | 20% |
-| Calcula el resumen (total, promedio, extremos) | 20% |
-| Filtra por categoría con `--category` | 20% |
-| Escribe `output/report.json` correctamente | 20% |
-| Manejo de errores (archivo no encontrado, categoría inexistente) | 10% |
-| TypeScript estricto — `pnpm build` sin errores | 10% |
-
----
-
-## 🔗 Recursos de Apoyo
-
-- [Teoría: Módulos ESM](../../1-teoria/02-modulos-esm.md)
-- [Teoría: async/await](../../1-teoria/03-async-await.md)
-- [Ejercicio 01: Hello Node](../../2-practicas/ejercicio-01-hello-node/README.md)
-- [Node.js fs/promises API](https://nodejs.org/docs/latest/api/fs.html#promises-api)
-- [process.argv — Node.js docs](https://nodejs.org/docs/latest/api/process.html#processargv)
+npx tsx src/index.ts --category Urban ,off road o kids

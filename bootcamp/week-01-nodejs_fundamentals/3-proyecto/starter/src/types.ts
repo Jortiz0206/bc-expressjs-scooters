@@ -1,11 +1,8 @@
 // ============================================
-// TIPOS — Adapta estas interfaces a tu dominio
+// TIPOS — Adaptado al dominio de Patinetas Eléctricas
 // ============================================
-// Renombra 'Item' al recurso de tu dominio asignado.
-// Ejemplo: Book, Medicine, Member, Dish, Room...
 
-// TODO: Renombrar 'Item' al recurso de tu dominio asignado
-export interface Item {
+export interface Scooter {
   id: string;
   name: string;
   category: string;
@@ -14,25 +11,14 @@ export interface Item {
   active: boolean;
 }
 
-// TODO: Agregar campos específicos de tu dominio
-// Ejemplo para Biblioteca:
-// export interface Book {
-//   id: string;
-//   title: string;
-//   author: string;
-//   genre: string;
-//   year: number;
-//   available: boolean;
-// }
-
 // Resumen que el procesador debe calcular
-export interface ItemSummary {
+export interface ScooterSummary {
   total: number;
   active: number;
   inactive: number;
   averagePrice: number;
-  mostExpensive: Item;
-  cheapest: Item;
+  mostExpensive: Scooter;
+  cheapest: Scooter;
   categories: string[];
 }
 
@@ -40,6 +26,6 @@ export interface ItemSummary {
 export interface Report {
   generatedAt: string;
   appliedFilter: string | null;
-  summary: ItemSummary;
-  items: Item[];
+  summary: ScooterSummary;
+  items: Scooter[];
 }

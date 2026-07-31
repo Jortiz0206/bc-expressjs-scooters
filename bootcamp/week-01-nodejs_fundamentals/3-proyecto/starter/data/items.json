@@ -1,14 +1,14 @@
 [
-  { "id": "i001", "name": "Laptop Pro 15", "category": "electronics", "price": 1299.99, "stock": 12, "active": true },
-  { "id": "i002", "name": "Wireless Mouse", "category": "electronics", "price": 29.99, "stock": 45, "active": true },
-  { "id": "i003", "name": "Standing Desk", "category": "furniture", "price": 499.99, "stock": 3, "active": true },
-  { "id": "i004", "name": "USB-C Hub", "category": "electronics", "price": 59.99, "stock": 28, "active": true },
-  { "id": "i005", "name": "Ergonomic Chair", "category": "furniture", "price": 349.99, "stock": 7, "active": true },
-  { "id": "i006", "name": "Monitor 27\"", "category": "electronics", "price": 399.99, "stock": 15, "active": true },
-  { "id": "i007", "name": "Bookshelf Oak", "category": "furniture", "price": 189.99, "stock": 0, "active": false },
-  { "id": "i008", "name": "Keyboard Mech", "category": "electronics", "price": 149.99, "stock": 22, "active": true },
-  { "id": "i009", "name": "Desk Lamp", "category": "accessories", "price": 45.99, "stock": 33, "active": true },
-  { "id": "i010", "name": "Cable Organizer", "category": "accessories", "price": 12.99, "stock": 60, "active": true },
-  { "id": "i011", "name": "Webcam HD", "category": "electronics", "price": 89.99, "stock": 18, "active": true },
-  { "id": "i012", "name": "Laptop Stand", "category": "accessories", "price": 39.99, "stock": 0, "active": false }
+  { "id": "p001", "name": "Patineta Urbana X1", "category": "scooters", "price": 499.99, "stock": 12, "active": true },
+  { "id": "p002", "name": "Patineta Pro Max 500W", "category": "scooters", "price": 899.99, "stock": 5, "active": true },
+  { "id": "p003", "name": "Casco de Seguridad LED", "category": "safety", "price": 49.99, "stock": 25, "active": true },
+  { "id": "p004", "name": "Cargador Rápido 42V", "category": "accessories", "price": 39.99, "stock": 18, "active": true },
+  { "id": "p005", "name": "Candado de Seguridad con Clave", "category": "accessories", "price": 29.99, "stock": 30, "active": true },
+  { "id": "p006", "name": "Kit de Llantas Antinchuzazos", "category": "parts", "price": 59.99, "stock": 10, "active": true },
+  { "id": "p007", "name": "Patineta Plegable Eco", "category": "scooters", "price": 349.99, "stock": 0, "active": false },
+  { "id": "p008", "name": "Soporte para Celular de Manubrio", "category": "accessories", "price": 19.99, "stock": 40, "active": true },
+  { "id": "p009", "name": "Chaleco Reflectivo Nocturno", "category": "safety", "price": 15.99, "stock": 50, "active": true },
+  { "id": "p010", "name": "Batería de Repuesto 36V", "category": "parts", "price": 199.99, "stock": 4, "active": true },
+  { "id": "p011", "name": "Timbre Electrónico Bocina", "category": "accessories", "price": 12.99, "stock": 35, "active": true },
+  { "id": "p012", "name": "Patineta Todo Terreno X-Off", "category": "scooters", "price": 1199.99, "stock": 0, "active": false }
 ]

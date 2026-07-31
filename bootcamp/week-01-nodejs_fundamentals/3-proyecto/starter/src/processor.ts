@@ -2,33 +2,69 @@
 // PROCESSOR — Filtra y calcula estadísticas
 // ============================================
 
-import type { Item, ItemSummary } from './types.js';
+import type { Scooter, ScooterSummary } from './types.js';
 
-// TODO: Implementar filterByCategory
-// Debe:
-// 1. Si categoryFilter es null, retornar todos los items
-// 2. Si categoryFilter está definido, retornar solo los items de esa categoría
-//    (comparación case-insensitive con .toLowerCase())
-// 3. Si no hay items en esa categoría, lanzar un Error que liste las categorías disponibles
-//
-// Firma esperada:
-// export function filterByCategory(items: Item[], categoryFilter: string | null): Item[]
+/**
+ * Filtra las patinetas por categoría (case-insensitive).
+ * Si la categoría no existe o no tiene elementos, lanza un error con las disponibles.
+ */
+export function filterByCategory(items: Scooter[], categoryFilter: string | null): Scooter[] {
+  // 1. Si es null, retornar todos
+  if (!categoryFilter) {
+    return items;
+  }
 
-// TODO: Implementar calculateSummary
-// Debe calcular y retornar un objeto ItemSummary con:
-// - total: longitud del array
-// - active: items con active === true
-// - inactive: items con active === false
-// - averagePrice: precio promedio redondeado a 2 decimales
-// - mostExpensive: item con el mayor precio
-// - cheapest: item con el menor precio
-// - categories: array de categorías únicas (sin repetición)
-//
-// Pistas:
-// - Usa .reduce() para sumar precios
-// - Usa .filter() para separar activos e inactivos
-// - Usa new Set() + Array.from() para categorías únicas
-// - Usa Math.max/min o sort para el más caro/barato
-//
-// Firma esperada:
-// export function calculateSummary(items: Item[]): ItemSummary
+  const normalizedFilter = categoryFilter.toLowerCase();
+  const filtered = items.filter(
+    (item) => item.category.toLowerCase() === normalizedFilter
+  );
+
+  // 3. Si no hay items en esa categoría, listar las categorías disponibles
+  if (filtered.length === 0) {
+    const availableCategories = Array.from(
+      new Set(items.map((item) => item.category))
+    );
+    throw new Error(
+      `No se encontraron elementos para la categoría "${categoryFilter}". Categorías disponibles: ${availableCategories.join(', ')}`
+    );
+  }
+
+  return filtered;
+}
+
+/**
+ * Calcula las estadísticas y resumen de la lista de patinetas.
+ */
+export function calculateSummary(items: Scooter[]): ScooterSummary {
+  const total = items.length;
+
+  // Manejo de caso borde si la lista está vacía
+  if (total === 0) {
+    throw new Error('No se puede calcular el resumen de una lista vacía.');
+  }
+
+  const activeItems = items.filter((item) => item.active);
+  const inactiveItems = items.filter((item) => !item.active);
+
+  // Sumar precios para el promedio
+  const totalPrice = items.reduce((acc, item) => acc + item.price, 0);
+  const averagePrice = Number((totalPrice / total).toFixed(2));
+
+  // Encontrar el más caro y el más barato usando sort o reduce
+  const sortedByPrice = [...items].sort((a, b) => b.price - a.price);
+  const mostExpensive = sortedByPrice[0];
+  const cheapest = sortedByPrice[sortedByPrice.length - 1];
+
+  // Obtener categorías únicas
+  const categories = Array.from(new Set(items.map((item) => item.category)));
+
+  return {
+    total,
+    active: activeItems.length,
+    inactive: inactiveItems.length,
+    averagePrice,
+    mostExpensive,
+    cheapest,
+    categories,
+  };
+}
