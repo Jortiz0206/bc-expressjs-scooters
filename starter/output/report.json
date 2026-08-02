@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-07-31T23:39:34.423Z",
+  "summary": {
+    "total": 12,
+    "active": 10,
+    "inactive": 2,
+    "averagePrice": 281.57,
+    "mostExpensive": {
+      "id": "p012",
+      "name": "Patineta Todo Terreno X-Off",
+      "category": "scooters",
+      "price": 1199.99,
+      "stock": 0,
+      "active": false
+    },
+    "cheapest": {
+      "id": "p011",
+      "name": "Timbre Electrónico Bocina",
+      "category": "accessories",
+      "price": 12.99,
+      "stock": 35,
+      "active": true
+    },
+    "categories": [
+      "scooters",
+      "safety",
+      "accessories",
+      "parts"
+    ]
+  },
+  "items": [
+    {
+      "id": "p001",
+      "name": "Patineta Urbana X1",
+      "category": "scooters",
+      "price": 499.99,
+      "stock": 12,
+      "active": true
+    },
+    {
+      "id": "p002",
+      "name": "Patineta Pro Max 500W",
+      "category": "scooters",
+      "price": 899.99,
+      "stock": 5,
+      "active": true
+    },
+    {
+      "id": "p003",
+      "name": "Casco de Seguridad LED",
+      "category": "safety",
+      "price": 49.99,
+      "stock": 25,
+      "active": true
+    },
+    {
+      "id": "p004",
+      "name": "Cargador Rápido 42V",
+      "category": "accessories",
+      "price": 39.99,
+      "stock": 18,
+      "active": true
+    },
+    {
+      "id": "p005",
+      "name": "Candado de Seguridad con Clave",
+      "category": "accessories",
+      "price": 29.99,
+      "stock": 30,
+      "active": true
+    },
+    {
+      "id": "p006",
+      "name": "Kit de Llantas Antinchuzazos",
+      "category": "parts",
+      "price": 59.99,
+      "stock": 10,
+      "active": true
+    },
+    {
+      "id": "p007",
+      "name": "Patineta Plegable Eco",
+      "category": "scooters",
+      "price": 349.99,
+      "stock": 0,
+      "active": false
+    },
+    {
+      "id": "p008",
+      "name": "Soporte para Celular de Manubrio",
+      "category": "accessories",
+      "price": 19.99,
+      "stock": 40,
+      "active": true
+    },
+    {
+      "id": "p009",
+      "name": "Chaleco Reflectivo Nocturno",
+      "category": "safety",
+      "price": 15.99,
+      "stock": 50,
+      "active": true
+    },
+    {
+      "id": "p010",
+      "name": "Batería de Repuesto 36V",
+      "category": "parts",
+      "price": 199.99,
+      "stock": 4,
+      "active": true
+    },
+    {
+      "id": "p011",
+      "name": "Timbre Electrónico Bocina",
+      "category": "accessories",
+      "price": 12.99,
+      "stock": 35,
+      "active": true
+    },
+    {
+      "id": "p012",
+      "name": "Patineta Todo Terreno X-Off",
+      "category": "scooters",
+      "price": 1199.99,
+      "stock": 0,
+      "active": false
+    }
+  ]
+}
