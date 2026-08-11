@@ -1,0 +1,13 @@
+# Dependencias (pesadas, se instalan con pnpm install)
+node_modules/
+
+# Código compilado (se genera con pnpm build)
+dist/
+
+# Variables de entorno y llaves secretas
+.env
+
+# Logs y archivos temporales de VS Code / Sistema
+*.log
+.DS_Store
+.vscode/
