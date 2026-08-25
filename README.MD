@@ -56,7 +56,7 @@ Entregable correspondiente a la **Semana 4: Validación, Errores y Logging** del
 A continuación se presentan las capturas de pantalla de las pruebas realizadas sobre los diferentes escenarios requeridos en la rúbrica:
 
 ### 1. Prueba de Validación Exitosa (POST 201 Created)
-![Prueba 1](docs/1%20Prueba%20de%20Validaci%C3%B3n%20Exitosa%20(POST%20201%20Created).png)
+![Prueba 1](https://github.com/Jortiz0206/bc-expressjs-scooters/blob/week-04/starter/docs/1%20Prueba%20de%20Validaci%C3%B3n%20Exitosa%20(POST%20201%20Created).png)
 
 ### 2. Prueba de Error de Validación con Zod (POST 400 Bad Request)
 ![Prueba 2](docs/2%20Prueba%20de%20Error%20de%20Validaci%C3%B3n%20con%20Zod%20(POST%20400%20Bad%20Request).png)
