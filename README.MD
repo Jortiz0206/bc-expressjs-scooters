@@ -53,18 +53,25 @@ Entregable correspondiente a la **Semana 4: Validación, Errores y Logging** del
 
 ## 📁 Evidencias y Pruebas (Carpeta `docs`)
 
-A continuación se presentan las capturas de pantalla de las pruebas realizadas sobre los diferentes escenarios requeridos en la rúbrica (Validez de Zod, códigos de estado HTTP, manejo de excepciones y paginación):
+A continuación se presentan las capturas de pantalla de las pruebas realizadas sobre los diferentes escenarios requeridos en la rúbrica:
 
-<p align="center">
-  <img src="docs/evidencias.png" alt="Evidencias de Pruebas de la API" width="100%">
-</p>
+### 1. Prueba de Validación Exitosa (POST 201 Created)
+![Prueba 1](docs/1%20Prueba%20de%20Validaci%C3%B3n%20Exitosa%20(POST%20201%20Created).png)
 
-* **1. Validación Exitosa (`POST 201 Created`):** Creación correcta cumpliendo con las reglas del esquema.
-* **2. Error de Validación Zod (`POST 400 Bad Request`):** Respuesta estructurada con el arreglo de `issues[]`.
-* **3. Búsqueda por ID Válido (`GET 200 OK`):** Recuperación exitosa del recurso específico.
-* **4. ID No Numérico o Inexistente (`GET 400 / 404`):** Control operacional con la clase `AppError` y coerción de tipos.
-* **5. Ruta No Encontrada (`404 Not Found en JSON`):** Middleware `notFound` interceptando rutas inválidas.
-* **6. Prueba de Paginación (`GET 200 OK`):** Listado fraccionado mediante parámetros de consulta (`page` y `limit`).
+### 2. Prueba de Error de Validación con Zod (POST 400 Bad Request)
+![Prueba 2](docs/2%20Prueba%20de%20Error%20de%20Validaci%C3%B3n%20con%20Zod%20(POST%20400%20Bad%20Request).png)
+
+### 3. Prueba de Búsqueda por ID Válido (GET 200 OK)
+![Prueba 3](docs/3%20Prueba%20de%20B%C3%BAsqueda%20por%20ID%20V%C3%A1lido%20(GET%20200%20OK).png)
+
+### 4. Prueba de ID No Numérico o Inexistente (GET 400 - 404)
+![Prueba 4](docs/4%20Prueba%20de%20ID%20No%20Num%C3%A9rico%20o%20Inexistente%20(GET%20400%20-%20404).png)
+
+### 5. Prueba de Ruta No Encontrada (404 Not Found en JSON)
+![Prueba 5](docs/5%20Prueba%20de%20Ruta%20No%20Encontrada%20(404%20Not%20Found%20en%20JSON).png)
+
+### 6. Prueba de Paginación (GET 200 OK)
+![Prueba 6](docs/6%20Prueba%20de%20Paginaci%C3%B3n%20(GET%20200%20OK).png)
 
 ## ⚙️ Cómo Ejecutar el Proyecto
 
