@@ -59,19 +59,19 @@ A continuación se presentan las capturas de pantalla de las pruebas realizadas 
 ![Prueba 1](https://github.com/Jortiz0206/bc-expressjs-scooters/blob/week-04/starter/docs/1%20Prueba%20de%20Validaci%C3%B3n%20Exitosa%20(POST%20201%20Created).png)
 
 ### 2. Prueba de Error de Validación con Zod (POST 400 Bad Request)
-![Prueba 2](docs/2%20Prueba%20de%20Error%20de%20Validaci%C3%B3n%20con%20Zod%20(POST%20400%20Bad%20Request).png)
+![Prueba 2](https://github.com/Jortiz0206/bc-expressjs-scooters/blob/week-04/starter/docs/2%20Prueba%20de%20Error%20de%20Validaci%C3%B3n%20con%20Zod%20(POST%20400%20Bad%20Request).png)
 
 ### 3. Prueba de Búsqueda por ID Válido (GET 200 OK)
-![Prueba 3](docs/3%20Prueba%20de%20B%C3%BAsqueda%20por%20ID%20V%C3%A1lido%20(GET%20200%20OK).png)
+![Prueba 3](https://github.com/Jortiz0206/bc-expressjs-scooters/blob/week-04/starter/docs/3%20Prueba%20de%20B%C3%BAsqueda%20por%20ID%20V%C3%A1lido%20(GET%20200%20OK).png)
 
 ### 4. Prueba de ID No Numérico o Inexistente (GET 400 - 404)
-![Prueba 4](docs/4%20Prueba%20de%20ID%20No%20Num%C3%A9rico%20o%20Inexistente%20(GET%20400%20-%20404).png)
+![Prueba 4](https://github.com/Jortiz0206/bc-expressjs-scooters/blob/week-04/starter/docs/4%20Prueba%20de%20ID%20No%20Num%C3%A9rico%20o%20Inexistente%20(GET%20400%20-%20404).png)
 
 ### 5. Prueba de Ruta No Encontrada (404 Not Found en JSON)
-![Prueba 5](docs/5%20Prueba%20de%20Ruta%20No%20Encontrada%20(404%20Not%20Found%20en%20JSON).png)
+![Prueba 5](https://github.com/Jortiz0206/bc-expressjs-scooters/blob/week-04/starter/docs/5%20Prueba%20de%20Ruta%20No%20Encontrada%20(404%20Not%20Found%20en%20JSON).png)
 
 ### 6. Prueba de Paginación (GET 200 OK)
-![Prueba 6](docs/6%20Prueba%20de%20Paginaci%C3%B3n%20(GET%20200%20OK).png)
+![Prueba 6](https://github.com/Jortiz0206/bc-expressjs-scooters/blob/week-04/starter/docs/6%20Prueba%20de%20Paginaci%C3%B3n%20(GET%20200%20OK).png)
 
 ## ⚙️ Cómo Ejecutar el Proyecto
 
