@@ -1,0 +1,64 @@
+// Prisma Schema — Proyecto Semana 05
+// Dominio: Sistema de Gestión de Patinetas Eléctricas
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ScooterStatus {
+  DISPONIBLE
+  EN_USO
+  MANTENIMIENTO
+  BLOQUEADA
+}
+
+model Station {
+  id           String    @id @default(uuid()) @db.Uuid
+  code         String    @unique
+  name         String
+  address      String
+  capacity     Int       @default(20)
+  active       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  scooters     Scooter[]
+
+  @@map("stations")
+}
+
+model Scooter {
+  id           String          @id @default(uuid()) @db.Uuid
+  serialNumber String          @unique
+  status       ScooterStatus   @default(DISPONIBLE)
+  batteryLevel Int             @default(100)
+  hourlyRate   Float           @default(2.5)
+  latitude     Float?
+  longitude    Float?
+  stationId    String?         @db.Uuid
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  station      Station?        @relation(fields: [stationId], references: [id], onDelete: SetNull)
+  logs         MaintenanceLog[]
+
+  @@map("scooters")
+}
+
+model MaintenanceLog {
+  id          String   @id @default(uuid()) @db.Uuid
+  description String
+  cost        Float    @default(0.0)
+  scooterId   String   @db.Uuid
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  scooter     Scooter  @relation(fields: [scooterId], references: [id], onDelete: Cascade)
+
+  @@map("maintenance_logs")
+}
